@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Your Designer</title>
+    <link rel='stylesheet' href='/stylesheets/designer_style.css' />
+</head>
+<style>
+    .navbar {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    background-color: transparent;
+    width: 100%;
+  }
+  
+  .logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .logo img {
+    /* margin-top: 10px; */
+    height: 50px;
+  }
+  
+  .container1 {
+    margin-top:3%;
+    font-size: larger;
+    text-align: center;
+  }
+  .container1 >h1{
+    color:rgb(48, 1, 56);
+  }
+  </style>
+  <body>
+    <div class="navbars">
+      <nav class="navbar">
+          <div class="logo">
+            <a href="http://localhost:3000/" >  <img src ="/images/image.png" alt="Myntra Logo"> </a> 
+            <!-- Replace with the correct path to your logo image -->
+  
+              <div class="container1">
+                  <h1>Myntra Designer</h1>
+              </div>
+          </div>
+      </nav>
+    <div class="container">
+        <h1>Select Your Designer</h1>
+        <h3 style="text-align: center;">They all are partnered designers with Myntra to give you tailored custom products</h3>
+
+        <div class="search-container">
+            <input type="text" placeholder="Search" class="search-input">
+            <button class="search-button">🔍</button>
+        </div>
+        <div class="recent-keywords">
+            <h2>Recent Keywords</h2>
+            <div class="keywords">
+                <span>Saree</span>
+                <span>Coat-blazzer</span>
+                <span>Shirts</span>
+                <span>Jeans</span>
+            </div>
+        </div>
+        <div class="suggested-designers">
+            <h2>Suggested Designers</h2>
+            <div class="designer-list">
+                <% designers.forEach(function(designer) { %>
+                    <div class="designer-card">
+                        <div class="designer-info">
+                            <h3><a href="/chat/<%= designer.name %>"><%= designer.name %></a></h3>
+                            <p><%= designer.location %></p>
+                            <p>Rating: <%= designer.rating %> ⭐</p>
+                        </div>
+                    </div>
+                <% }); %>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

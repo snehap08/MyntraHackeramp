@@ -1,0 +1,145 @@
+.sustainability-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 50px;
+    margin-left: 80px;
+    width: 400px; /* Adjust the width as needed */
+  }
+  
+  .sustainability-heading {
+    font-size: 3rem; /* Adjust the size as needed */
+    margin-bottom: 10px;
+  }
+  
+  .sustainability-heading span {
+    display: block;
+  }
+  
+  .sustainability-subheading {
+    color: green;
+    font-size: 1.5rem; /* Adjust the size as needed */
+    font-weight: 400;
+    text-decoration: underline;
+    margin-bottom: 1px;
+    margin-top: 3px;
+  }
+  
+  .sustainability-paragraph {
+    margin-bottom: 2px;
+    font-size: 1rem; /* Adjust the size as needed */
+  }
+  
+  .sustainability-button {
+    /* Moved from styled component */
+    background-color: black;
+    color: white;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-top: 27px;
+    font-size: 1rem; /* Adjust the size as needed */
+  
+    /* Added animation properties */
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .sustainability-button:hover {
+    background-color: #333;
+  }
+  
+  .sustainability-image-container {
+    flex: 1;
+    display: flex;
+    animation: zoomIn 2s ease-out;
+  }
+  
+  .sustainability-image {
+    max-width: 150%;
+    height: auto;
+    margin-left: 350px;
+    margin-bottom: 34px;
+    margin-top: -414px;
+  }
+  
+  .recycled-fabric-container {
+    margin-left: 320px;
+    margin-top: -40px; /* Add space above the recycled fabric section */
+  }
+  
+  .recycled-fabric-heading {
+    font-size: 1.5rem; /* Adjust the size as needed */
+    text-decoration: underline; /* Underline the heading */
+    margin-bottom: 10px; /* Add space below the heading */
+  }
+  
+  .recycled-fabric-paragraph {
+    font-size: 1rem; /* Adjust the size as needed */
+    margin-bottom: 10px; /* Add space below the paragraph */
+    width: 70%;
+  }
+  
+  .recycled-fabric-image {
+    max-width: 50%; /* Ensure the image scales correctly */
+    height: auto;
+    margin-left: 354px;
+    margin-top: -134px;
+  }
+  
+  .sustainable-material-heading {
+    font-size: 1.5rem; /* Adjust the size as needed */
+    text-decoration: underline; /* Underline the heading */
+    margin-bottom: 10px; /* Add space below the heading */
+    margin-top: -634px;
+    margin-left: 850px;
+    width: 40%;
+  }
+  
+  .sustainable-material-container {
+    text-align: center;
+    margin-top: 20px; /* Add space above each section */
+  }
+  
+  .tshirt-container {
+    text-align: center;
+    margin-top: -350px;
+  }
+  
+  .sustainable-material-image {
+    width: auto; /* Maintain aspect ratio */
+    height: auto; /* Allow natural height */
+    max-width: 180px; /* Adjust maximum width as needed */
+    max-height: 180px; /* Adjust maximum height as needed */
+    margin-left: 995px; /* Adjust margin as needed */
+  }
+  
+  .tshirt {
+    width: auto; /* Maintain aspect ratio */
+    height: auto; /* Allow natural height */
+    max-width: 380px; /* Adjust maximum width as needed */
+    max-height: 580px; /* Adjust maximum height as needed */
+    margin-left: 925px;
+    margin-top: -34px;
+  }
+  
+  .tshirt-heading {
+    margin-left: 744px;
+    margin-top: 4px;
+  }
+  
+  .tshirt-subheading {
+    margin-left: 720px;
+    margin-top: -15px;
+  }
+  
+  @keyframes zoomIn {
+    from {
+      transform: scale(0.5); /* Start zoomed out */
+    }
+    to {
+      transform: scale(1); /* End at normal size */
+    }
+  }
+  

@@ -1,0 +1,11 @@
+node_modules/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Configuration files
+dbConfig.js
+
+/node_modules/

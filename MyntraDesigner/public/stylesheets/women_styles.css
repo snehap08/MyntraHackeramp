@@ -1,0 +1,122 @@
+body{
+  background-color: #48aee5;
+}
+
+.navbar {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  background-color: #121212;
+}
+
+.logo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.logo img {
+  /* margin-top: 10px; */
+  height: 50px;
+}
+
+.container1 {
+  font-size: larger;
+  text-align: center;
+  margin-top: 40px;
+}
+.container{
+  text-align: center;
+}
+h1 {
+    margin-bottom: 80px;
+    font-size: 24px;
+    color: #000000;
+}
+
+.grid-container {
+    margin-top: 8%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+
+}
+
+.grid-container button {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(28, 25, 25, 0.3);
+    color: #000000;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 10px;
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.grid-container button:hover {
+    background: #020202;
+    color: aliceblue;
+}
+
+.grid-container i {
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+
+
+.prompt-input {
+  width: 100%;
+  position: relative;
+  display: flex;
+  margin-bottom: 10%;
+}
+
+.prompt {
+  width: 100%;
+  border: 1px solid #1d1d1d;
+  border-right: none;
+  padding: 5px;
+  height: 24px;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  color: #000000;
+}
+
+.prompt:focus{
+  color: #383434;
+}
+
+.submit-button {
+  width: 40px;
+  height: 36px;
+  border: 1px solid #1d1d1d;
+  background: #ffffff;
+  text-align: center;
+  color: #000000;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+/*Resize the wrap to see the search bar change!*/
+.wrap{
+  width: 30%;
+  position: absolute;
+  top: 27%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

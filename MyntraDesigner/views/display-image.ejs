@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Generated Images</title>
+    <link rel='stylesheet' href='/stylesheets/display_style.css' />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
+</head>
+<style>
+  .navbar {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  background-color: transparent;
+}
+
+.logo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.logo img {
+  /* margin-top: 10px; */
+  height: 50px;
+}
+
+.container1 {
+  margin-top:3%;
+  font-size: larger;
+  text-align: center;
+}
+.container1 >h1{
+  color:rgb(48, 1, 56);
+}
+  </style>
+<body>
+    <div class="navbars">
+        <nav class="navbar">
+            <div class="logo">
+            <a href="http://localhost:3000/" >  <img src ="/images/image.png" alt="Myntra Logo"> </a> 
+
+                <!-- Replace with the correct path to your logo image -->
+    
+                <div class="container1">
+                    <h1>Myntra Designer</h1>
+                </div>
+            </div>
+        </nav>
+    <div class="container">
+        <h1>Generated Images</h1>
+        <div class="carousel">
+            <% if (images && images.length > 0) { %>
+                <% images.forEach(function(image) { %>
+                    <div class="image-card">
+                        <img class="generated-image" src="/images/<%= image %>" alt="Generated Image">
+                    </div>
+                <% }); %>
+            <% } else { %>
+                <p>No images available for the selected prompt: "<%= prompt %>" in category: "<%= category %>".</p>
+            <% } %>
+        </div>
+        <form action="/" method="get">
+            <button type="submit">Go Back</button>
+        </form>
+        <form action="/select-designer" method="get">
+            <button type="submit">Place Order</button>
+        </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('.carousel').slick({
+                infinite: true,
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                dots: true,
+                arrows: true,
+                autoplay: true,
+                autoplaySpeed: 2000
+            });
+
+            const images = document.querySelectorAll('.generated-image');
+
+            function getDominantColor(imageElement) {
+                const canvas = document.createElement('canvas');
+                const context = canvas.getContext('2d');
+                canvas.width = imageElement.naturalWidth;
+                canvas.height = imageElement.naturalHeight;
+                context.drawImage(imageElement, 0, 0, canvas.width, canvas.height);
+                const imageData = context.getImageData(0, 0, canvas.width, canvas.height);
+                const data = imageData.data;
+
+                const colorCounts = {};
+                let maxCount = 0;
+                let dominantColor = '';
+
+                for (let i = 0; i < data.length; i += 4) {
+                    const rgb = `${data[i]},${data[i + 1]},${data[i + 2]}`;
+                    if (!colorCounts[rgb]) {
+                        colorCounts[rgb] = 0;
+                    }
+                    colorCounts[rgb]++;
+                    if (colorCounts[rgb] > maxCount) {
+                        maxCount = colorCounts[rgb];
+                        dominantColor = rgb;
+                    }
+                }
+
+                return dominantColor;
+            }
+
+            function calculateBackgroundColor(images) {
+                const colorCounts = {};
+                let totalImages = Math.min(images.length, 3);
+
+                images.forEach((image, index) => {
+                    if (index < totalImages) {
+                        image.addEventListener('load', function() {
+                            const dominantColor = getDominantColor(image);
+                            if (!colorCounts[dominantColor]) {
+                                colorCounts[dominantColor] = 0;
+                            }
+                            colorCounts[dominantColor]++;
+                            if (index === totalImages - 1) {
+                                let maxCount = 0;
+                                let mostDominantColor = '';
+                                for (let color in colorCounts) {
+                                    if (colorCounts[color] > maxCount) {
+                                        maxCount = colorCounts[color];
+                                        mostDominantColor = color;
+                                    }
+                                }
+                                document.body.style.backgroundColor = `rgb(${mostDominantColor})`;
+                            }
+                        });
+                    }
+                });
+            }
+
+            if (images.length > 0) {
+                calculateBackgroundColor(images);
+            }
+        });
+    </script>
+</body>
+</html>

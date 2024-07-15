@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Confirm Your Selection</title>
+    <link rel='stylesheet' href='/stylesheets/confirm_style.css' />
+    <style>
+        #additionalButtons {
+            display: none;
+        }
+        .navbar {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    background-color: transparent;
+  }
+  
+  .logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .logo img {
+    /* margin-top: 10px; */
+    height: 50px;
+  }
+  
+  .container1 {
+    font-size: larger;
+    text-align: center;
+    margin-top: 10px;
+  }
+    </style>
+</head>
+<body>
+    <div class="navbars">
+        <nav class="navbar">
+            <div class="logo">
+                <a href="http://localhost:3000/" >  <img src ="/images/image.png" alt="Myntra Logo"> </a> 
+                <!-- Replace with the correct path to your logo image -->
+    
+                <div class="container1">
+                    <h1>Myntra Designer</h1>
+                </div>
+            </div>
+        </nav>
+
+    <div class="container" id="slide1">
+        <h1>Confirm Your Selection✅</h1>
+        <p><%= prompt %></p>
+        
+        <form action="/confirm-prompt" method="post">
+            <input type="hidden" name="prompt" value="<%= prompt %>">
+            <button id="approveButton" type="button" onclick="showAdditionalButtons()">Approve</button>
+            <button id="denyButton" type="button">Deny</button>
+        </form>      
+
+        <div id="additionalButtons">
+            <form action="/next-step" method="post">
+                <input type="hidden" name="prompt" value="<%= prompt %>">
+                <button type="submit" name="action" value="view_myntra">Look at Myntra Store</button>
+                <button type="submit" name="action" value="generate_ai_image">Generate AI Image</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function showAdditionalButtons() {
+            document.getElementById('additionalButtons').style.display = 'block';
+            document.getElementById('approveButton').style.display = 'none';
+            document.getElementById('denyButton').style.display = 'none';
+        }
+    </script>
+</body>
+</html>

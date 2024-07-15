@@ -1,0 +1,62 @@
+/* File: src/components/CollectionPage.css */
+
+.collection-container {
+    padding: 20px;
+  }
+  
+  .collection-heading {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 10px;
+  }
+  
+  .collection-paragraph {
+    text-align: center;
+    font-size: 1.2em;
+    margin-bottom: 20px;
+  }
+  
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+    gap: 50px;
+  }
+  
+  .product-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 16px;
+    width: 325px;
+    height: 545px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+  
+  .product-image {
+    width: 100%;
+    height: 35%;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 16px;
+    border-radius: 8px;
+  }
+  
+  .product-name {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+  }
+  
+  .product-description,
+  .product-price,
+  .product-material,
+  .product-certification,
+  .product-eco-features {
+    margin: 5px 0;
+  }
+  .product-price{
+    font-size: 25px;
+  }
+  .product-eco-features{
+    text-decoration: underline;
+  }
+  
+  

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Myntra Designer</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+<body>
+<div class="navbars">
+    <nav class="navbar">
+        <div class="logo">
+             <!-- Replace with the correct path to your logo image -->
+            <a href="http://localhost:3000/" >  <img src ="/images/image.png" alt="Myntra Logo"> </a> 
+            <div class="container1">
+                <h1>Myntra Designer</h1>
+            </div>
+
+        </div>
+
+    </nav>
+    
+
+    <div class="container">
+        <h1> <pre>Hey! Are you ready to tell us about your dream dress or maybe this time <br> let's look into some of our suggestions only!!😁</pre></h1>
+        
+        <form action="/select-prompt" method="post">
+            <div class="dropdown">
+                <h3>From the dropdown below choose the cateogary you want!🫶</h3>
+                <select name="prompt" id="prompt">
+                    <option value="" disabled selected>Choose what are you exactly looking for??</option>
+                    <option value="men_wear" style="color: black;">Men wear</option>
+                    <option value="women_wear" style="color: black;">Women wear</option>
+                    <option value="footwear" style="color: black;">Footwear</option>
+                    <option value="bags_accessories" style="color: black;">Bags and Accessories</option>
+                    <!-- <option value="others" style="color: black;">Others</option> -->
+                </select>
+            </div>
+            <button type="submit" class="submit-button">Submit</button>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

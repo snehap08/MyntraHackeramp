@@ -1,0 +1,78 @@
+body{
+    background-color:  #FFB7CE;
+}
+
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    background-color:  #fbf7ef;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+.search-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.search-input {
+    width: 70%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.search-button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #333;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.recent-keywords, .suggested-designers {
+    margin: 20px 0;
+}
+
+.keywords span {
+    display: inline-block;
+    background-color: #e0e0e0;
+    padding: 5px 10px;
+    border-radius: 4px;
+    margin: 5px;
+}
+
+.designer-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.designer-card {
+    width: 30%;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.designer-card img {
+    width: 100%;
+    height: auto;
+}
+
+.designer-info {
+    padding: 10px;
+}

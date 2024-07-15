@@ -1,0 +1,108 @@
+body{
+  background-color: #FFB7CE;
+}
+
+
+.navbar {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  background-color: transparent;
+}
+
+.logo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.logo img {
+  /* margin-top: 10px; */
+  height: 50px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+
+
+.container1 {
+  font-size: larger;
+  text-align: center;
+}
+
+.container1 >h1{
+  color:rgb(48, 1, 56);
+}
+
+
+.container {
+  
+  text-align: center;
+}
+
+h1>pre {
+  margin-top: 5%;
+  font-family: Arial, sans-serif;
+  margin-bottom: 10px;
+  font-size: 38px;
+  color: #000000;
+}
+
+.dropdown {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  height: auto;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  box-shadow: 10px 10px 80px rgb(67, 66, 66);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  margin-top: 8%;
+  width: auto; 
+  color: rgb(0, 0, 0);
+  padding: 15px 30px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 25px;
+}
+
+.dropdown select {
+  background: transparent;
+  border: black 2px;
+  color: rgb(0, 0, 0);
+  appearance: none;
+  padding: 10px;
+  width: 100%;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.dropdown select:focus {
+  outline: none;
+}
+
+.submit-button {
+  background-color: blue; /* Change submit button color to blue */
+  border: none;
+  color: white;
+  padding: 15px 30px;
+  text-align: center;
+  text-decoration: none;
+  display: block; /* Make the button appear on the next line */
+  font-size: 16px;
+  margin: 20px auto; /* Add margin to center the button */
+  cursor: pointer;
+  border-radius: 25px;
+}

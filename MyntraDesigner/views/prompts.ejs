@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Myntra Designer - <%= category.charAt(0).toUpperCase() + category.slice(1) %> Wear</title>
+  <link rel='stylesheet' href='/stylesheets/women_styles.css' />
+</head>
+<style>
+  .navbar {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  background-color: transparent;
+}
+
+.logo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.logo img {
+  /* margin-top: 10px; */
+  height: 50px;
+}
+
+.container1 {
+  margin-top:25%;
+  font-size: larger;
+  text-align: center;
+}
+.container1 >h1{
+  color:rgb(48, 1, 56);
+}
+</style>
+<body>
+  <div class="navbars">
+    <nav class="navbar">
+        <div class="logo">
+          <a href="http://localhost:3000/" >  <img src ="/images/image.png" alt="Myntra Logo"> </a> 
+          <!-- Replace with the correct path to your logo image -->
+
+            <div class="container1">
+                <h1>Myntra Designer</h1>
+            </div>
+        </div>
+    </nav>
+  <div class="container">
+    <h1>Customized prompts are coming for you in the future till now please enjoy our suggestions only for you ❤️</h1>
+    <!-- <p style="margin: 20px; color: rgb(237, 56, 56);"><strong>Note: Due to high API costs, custom image generation is unavailable for now. If Myntra supports us, we'll launch this feature soon. Meanwhile, explore pre-generated designs below.</strong></p> -->
+    <form action="/type-prompt" class="wrap" method="post">
+        <div class="prompt-input">
+            <input type="text" name="prompt" class="prompt" placeholder="Type your dream dress description here..." required>
+            <select name="category">
+              <option value="women">Women</option>
+              <option value="men">Men</option>
+              <option value="footwear">Footwear</option>
+              <option value="bags_accessories">Bags and Accessories</option>
+              <!-- Add more categories as needed -->
+          </select>
+        <button type="submit" class="submit-button">🔍</button>
+    </div>
+    </form>
+      
+    <form action="/confirm-prompt" method="post">
+      <div class="grid-container">
+        <% prompts.forEach(function(prompt) { %>
+          <button type="submit" name="selectedPrompt" value="<%= prompt %>">
+            <i>✍️</i>
+            <%= prompt %>
+          </button>
+        <% }); %>
+      </div>
+    </form>
+  </div>
+</body>
+</html>
